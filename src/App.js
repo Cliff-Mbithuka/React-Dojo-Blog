@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom/cjs/react-router-dom.min";
+import Create from "./Create";
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         <div className="content">
           <Switch>
             {" "}
-            <Route path="/">
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
             </Route>
           </Switch>
         </div>
