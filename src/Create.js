@@ -8,6 +8,15 @@ const [author, setAuthor] = useState('');
 const handleSubmit = (e) => {
   e.prevent.Default();
   const blog = {title, body, author}
+
+  fetch('http://localhost:2485/blogs', {
+    method: 'POST',
+    headers: {"Content-Type": "appication/json"}, 
+    body: JSON.stringify(blog)
+  }).then(() => {
+    console.log("new blog added");
+    
+  })
 }
 
   return (
